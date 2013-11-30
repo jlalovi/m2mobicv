@@ -1,5 +1,120 @@
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+@font-face {
+	font-family: 'fredokaone';
+	src: url('../font/fredokaone.eot');
+	src: url('../font/fredokaone.eot#iefix'),
+		 url('../font/fredokaone.ttf');
+	font-weight: bold;
+	font-style: normal;
 }
+@font-face {
+	font-family: 'leaguegothic';
+	src: url('../font/leaguegothic.eot');
+	src: url('../font/leaguegothic.eot#iefix'),
+		 url('../font/leaguegothic.woff'),
+		 url('../font/leaguegothic.ttf');
+	font-weight: bold;
+	font-style: normal;
+}
+body {
+	background: #e6e2d8 url("../img/ricepaper_v3.png");
+}
+h1, h2, h3 {
+	font-family: 'leaguegothic';
+}
+h2 {
+	font-size: 50px;
+	color: #666;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+#navigation {
+	position: fixed;
+	background: #302f2d;
+	left: 15px;
+	bottom: 15px;
+	width: 90px;
+	padding: 0;
+	cursor: pointer;
+}
+	#navigation .logo {
+		width: 70px;
+		height: 70px;
+		padding: 10px 10px 0 10px;
+	}
+	#navigation .type-logo {
+		margin:0;
+		text-align: center;
+		color: #fff;
+		padding-bottom: 5px;
+		letter-spacing: 0;
+	}
+	.menu {
+		height: 0px; /* Efecto CSS más recomendable (para evitar jQuery) para slideToggle. Esto va junto al hover más adelante */
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		overflow: hidden; /* Garantiza que no se desparrame el contenido que se sale de la caja que se ha definido, en este caso con height=0 (en algunos navegadores pasa) */
+		-webkit-transition: height .3s;
+		transition: height .3s;
+	}
+		#navigation:hover .menu { /*Para hacer hover sobre #navigation y el efecto en .menu*/
+			height: 288px;
+		}	
+		.menu a {
+			padding: 15px 5px;
+			border-top: solid 1px #555;
+			color: #fff;
+			font-size: 15px;
+			text-decoration: none;
+			display: block;
+		}
+			.menu a:hover {
+				background: #222120;
+			}
+
+.header-contact {
+	padding: 15px 0;
+	margin: 0 15px;
+	border-bottom: solid 1px gray;
+}
+	.header-contact p {
+		color: #6b6860;
+		font-size: 16px;
+		margin: 0;
+		line-height: 100%; /* Toma la altura de fuente establecida, en este caso de 16px; El efecto es que quedan más juntas sin necesidad de padding */
+	}
+
+.wrapper {
+	width: 600px;
+	margin: 0 auto;
+}
+
+#intro {
+	margin-top: 100px;
+	height: 100%;
+	margin-bottom: 200px;	
+}
+	#intro .logo {
+		width: 300px;
+		height: 299px;
+		margin: 0 auto;
+		display: block; /*Las imágenes son inline, por lo que para que funcione el margin 0-auto, el display tiene que ser block*/
+	}
+	.type-logo {
+		font-family: 'fredokaone';
+		letter-spacing: -1px;
+	}
+	.type-logo span {
+		font-family: Arial, sans-serif;
+	}
+	#intro .type-logo {
+		color: #15120b;
+		font-size: 70px;
+		text-align: center;
+		margin: 20px 0;
+	}
+	#intro .type-logo span {
+		color: #9e8756;
+	}
