@@ -77,6 +77,7 @@ h3 {
 		-webkit-transition: height .3s;
 		transition: height .3s;
 	}
+		#navigation #navigation-menu.show-menu,
 		#navigation:hover .menu { /*Para hacer hover sobre #navigation y el efecto en .menu*/
 			height: 288px;
 		}	
@@ -172,7 +173,7 @@ h3 {
 	}
 
 /********************************
-           SKILLS
+           RESOURCES
 **********************************/
 #resources {
 	width: 1240px;
@@ -184,36 +185,70 @@ h3 {
 		width: 300px;
 		height: 125px;
 		float: left;
-		background: #B2A070;
 		margin: 5px;
 		text-decoration: none;
 		color: #333;
+		background: #dfd9ce;
 		position: relative;
 		transition: background .3s;
 	}
 		.resources-box:hover {
-			background: #C4B792;
+			background: #CBC1AF;
 		}
 		.resources-box p {
 			font-size: 14px;
 		}
 		.resources-box h4, .resources-box p {
 			text-align: right;
-			margin: 10px 10px 10px 50px;		
+			margin: 10px 15px 15px 60px;		
 		}
 		.resources-box .resources-icon {
 			font-size: 40px;
 			position: absolute;
-			left: 7px;
-			bottom: 5px;
+			left: 15px;
+			bottom: 10px;
 		}
-	.web {
-		
+
+/********************************
+           PROJECTS
+**********************************/
+#projects {
+	width: 700px;
+	margin: 0 auto;
+}
+	.project-button {
+		float: left;
+		width: 300px;
+		height: 50px;
+		font-size: 40px;
+		margin: 15px;
+		padding: 10px 0;
+		text-align: center;
+		border: solid 1px;
+
 	}
-	.books {
-		
+
+
+/*******************
+ Media queries
+ *********************/
+@media (max-width: 1240px) { 
+	#resources {
+		width: 700px;
 	}
-	.tools {
-	
+}
+
+@media (max-width: 740px) { 
+	#resources {
+		width: 530px;
 	}
-	
+	.resources-box {
+		width: 100%;
+	}
+}
+
+@media (max-height: 540px) { 
+	#intro {
+		margin-bottom: 20px;	
+	}
+}

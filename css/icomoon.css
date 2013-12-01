@@ -23,15 +23,27 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.icon-html5:before {
+.icon-globe:before {
 	content: "\e600";
 }
-.icon-css3:before {
-	content: "\e601";
-}
-.icon-github:before {
+.icon-book:before {
 	content: "\e602";
 }
-.icon-code:before {
+.icon-github:before {
 	content: "\e603";
+}
+.icon-file-xml:before {
+	content: "\e606";
+}
+.icon-html5:before {
+	content: "\e604";
+}
+.icon-css3:before {
+	content: "\e605";
+}
+.icon-wrench:before {
+	content: "\e607";
+}
+.icon-code:before {
+	content: "\e608";
 }
