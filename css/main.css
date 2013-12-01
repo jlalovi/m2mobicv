@@ -17,6 +17,7 @@
 }
 body {
 	background: #e6e2d8 url("../img/ricepaper_v3.png");
+	font-family: Arial, Helvetica, sans-serif;
 }
 h1, h2, h3 {
 	font-family: 'leaguegothic';
@@ -27,6 +28,23 @@ h2 {
 	text-align: center;
 	text-transform: uppercase;
 	letter-spacing: 1px;
+}
+h3 {
+	font-size: 30px;
+	margin: 15px 0;
+}
+
+.horizontal-list { /*Para ahorrar espacio en las listas horizontales junto con .horizontal-list li {float:left;}*/
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+	.horizontal-list li {
+		float: left;
+	}
+
+.clear { /*Para ponerlo después de los float conflictivos*/
+	clear: both;
 }
 
 #navigation {
@@ -86,10 +104,19 @@ h2 {
 		line-height: 100%; /* Toma la altura de fuente establecida, en este caso de 16px; El efecto es que quedan más juntas sin necesidad de padding */
 	}
 
-.wrapper {
-	width: 600px;
+#intro,
+#cover-letter,
+#skills,
+#resources,
+#contact,
+#counter,
+#projects {
 	margin: 0 auto;
 }
+
+/********************************
+           INTRO
+**********************************/
 
 #intro {
 	margin-top: 100px;
@@ -118,3 +145,75 @@ h2 {
 	#intro .type-logo span {
 		color: #9e8756;
 	}
+
+/********************************
+           COVER LETTER
+**********************************/
+
+#cover-letter {
+	width: 600px;	
+}
+
+/********************************
+           SKILLS
+**********************************/
+#skills {
+	width: 960px;
+}
+
+#skills .horizontal-list li {
+	width: 200px;
+	height: 400px;
+	padding: 0 20px;
+	text-align: center;
+}
+	.skill-icon {
+		font-size: 50px;
+	}
+
+/********************************
+           SKILLS
+**********************************/
+#resources {
+	width: 1240px;
+	margin: 0 auto 200px;
+	overflow: hidden; /*para incluir todos los elementos float que están dentro de #resources. Sino, el margin-bottom 200px anterior no tiene efecto*/
+}
+
+	.resources-box {
+		width: 300px;
+		height: 125px;
+		float: left;
+		background: #B2A070;
+		margin: 5px;
+		text-decoration: none;
+		color: #333;
+		position: relative;
+		transition: background .3s;
+	}
+		.resources-box:hover {
+			background: #C4B792;
+		}
+		.resources-box p {
+			font-size: 14px;
+		}
+		.resources-box h4, .resources-box p {
+			text-align: right;
+			margin: 10px 10px 10px 50px;		
+		}
+		.resources-box .resources-icon {
+			font-size: 40px;
+			position: absolute;
+			left: 7px;
+			bottom: 5px;
+		}
+	.web {
+		
+	}
+	.books {
+		
+	}
+	.tools {
+	
+	}
+	
