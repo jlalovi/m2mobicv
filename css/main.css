@@ -19,7 +19,10 @@ body {
 	background: #e6e2d8 url("../img/ricepaper_v3.png");
 	font-family: Arial, Helvetica, sans-serif;
 }
-h1, h2, h3 {
+a {
+	text-decoration: none;
+}
+h1, h2, h3{
 	font-family: 'leaguegothic';
 }
 h2 {
@@ -32,6 +35,13 @@ h2 {
 h3 {
 	font-size: 30px;
 	margin: 15px 0;
+}
+hr {
+	margin: 15px 10px 0 0;
+	height: 1px;
+	border-top: 1px solid #c2bda7;
+	border-bottom: 1px solid #fcf7f1;
+	background-color: #e1dbcb;
 }
 
 .horizontal-list { /*Para ahorrar espacio en las listas horizontales junto con .horizontal-list li {float:left;}*/
@@ -47,19 +57,35 @@ h3 {
 	clear: both;
 }
 
+#intro,
+#cover-letter,
+#skills,
+#resources,
+#contact,
+#projects {
+	margin: 0 auto;
+	overflow: hidden;
+	margin-bottom: 200px;
+}
+
+/********************************
+           NAVIGATION BAR
+**********************************/
 #navigation {
 	position: fixed;
-	background: #302f2d;
+	background: #000;
+	opacity: 0.8;
 	left: 15px;
 	bottom: 15px;
-	width: 90px;
+	width: 95px;
 	padding: 0;
 	cursor: pointer;
+	z-index: 10;
 }
 	#navigation .logo {
 		width: 70px;
 		height: 70px;
-		padding: 10px 10px 0 10px;
+		padding: 10px 12px 0 12px;
 	}
 	#navigation .type-logo {
 		margin:0;
@@ -79,54 +105,70 @@ h3 {
 	}
 		#navigation #navigation-menu.show-menu,
 		#navigation:hover .menu { /*Para hacer hover sobre #navigation y el efecto en .menu*/
-			height: 288px;
+			height: 292px;
 		}	
 		.menu a {
-			padding: 15px 5px;
+			padding: 15px 5px; /*Height defined with padding*/
 			border-top: solid 1px #555;
 			color: #fff;
 			font-size: 15px;
-			text-decoration: none;
 			display: block;
 		}
 			.menu a:hover {
 				background: #222120;
 			}
 
-.header-contact {
+/********************************
+           HEADER
+**********************************/
+#header {
 	padding: 15px 0;
 	margin: 0 15px;
-	border-bottom: solid 1px gray;
+	position: relative;
 }
-	.header-contact p {
+	#header p {
 		color: #6b6860;
 		font-size: 16px;
 		margin: 0;
 		line-height: 100%; /* Toma la altura de fuente establecida, en este caso de 16px; El efecto es que quedan más juntas sin necesidad de padding */
 	}
-
-#intro,
-#cover-letter,
-#skills,
-#resources,
-#contact,
-#counter,
-#projects {
-	margin: 0 auto;
-}
+	.social {
+		position: absolute;
+		right: 10px;
+		top: 15px;		
+	}
+		.social li {
+			width: 32px;
+			height: 32px;
+			font-size: 20px;
+			text-align: center;
+			background: #62615d;
+			border-radius: 100%;
+			margin-left: 10px;
+			position: relative;
+			-webkit-transition: background .3s;
+			transition: background .3s;
+		}
+			.social li:hover {
+				background: #474643;
+			}			
+			.social a {
+				color: #e9e5db;
+				position: absolute;
+				top: 6px;
+				left: 6px;
+			}
 
 /********************************
            INTRO
 **********************************/
-
 #intro {
-	margin-top: 100px;
-	height: 100%;
-	margin-bottom: 200px;	
+	margin-top: 50px;
+	height: 100%;		
 }
 	#intro .logo {
-		width: 300px;
-		height: 299px;
+		width: 310px;
+		height: 310px;
 		margin: 0 auto;
 		display: block; /*Las imágenes son inline, por lo que para que funcione el margin 0-auto, el display tiene que ser block*/
 	}
@@ -139,7 +181,7 @@ h3 {
 	}
 	#intro .type-logo {
 		color: #15120b;
-		font-size: 70px;
+		font-size: 85px;
 		text-align: center;
 		margin: 20px 0;
 	}
@@ -152,19 +194,32 @@ h3 {
 **********************************/
 
 #cover-letter {
-	width: 600px;	
+	width: 600px;
+	margin-bottom: 100px;
 }
+#cover-letter h2 {
+	margin-top: 150px; 
+}
+ #cover-letter a, #cover-letter strong {
+ 	color: #111;
+	font-weight: bold;
+ }
 
 /********************************
            SKILLS
 **********************************/
 #skills {
 	width: 960px;
+	margin-bottom: 260px;
+}
+#skills h2 {
+	margin-bottom: 60px;
+	padding-top: 200px;
 }
 
 #skills .horizontal-list li {
 	width: 200px;
-	height: 400px;
+	height: 250px;
 	padding: 0 20px;
 	text-align: center;
 }
@@ -176,20 +231,18 @@ h3 {
            RESOURCES
 **********************************/
 #resources {
-	width: 1240px;
-	margin: 0 auto 200px;
-	overflow: hidden; /*para incluir todos los elementos float que están dentro de #resources. Sino, el margin-bottom 200px anterior no tiene efecto*/
+	width: 1240px;	
 }
 
 	.resources-box {
 		width: 300px;
-		height: 125px;
+		height: 140px;
 		float: left;
 		margin: 5px;
-		text-decoration: none;
 		color: #333;
 		background: #dfd9ce;
 		position: relative;
+		-webkit-transition: background .3s;
 		transition: background .3s;
 	}
 		.resources-box:hover {
@@ -208,47 +261,246 @@ h3 {
 			left: 15px;
 			bottom: 10px;
 		}
+			.resources-box .resources-icon.progress {
+				left: 65px;
+				bottom: 0px;
+			}
 
 /********************************
            PROJECTS
 **********************************/
 #projects {
-	width: 700px;
-	margin: 0 auto;
+	width: 800px;
 }
+	.time-done {
+		font-size: 22px;
+		padding-top: 50px;
+	}
 	.project-button {
 		float: left;
-		width: 300px;
-		height: 50px;
-		font-size: 40px;
-		margin: 15px;
+		width: 350px;
+		margin: 20px;
 		padding: 10px 0;
-		text-align: center;
-		border: solid 1px;
+		background: #333;
+		color: #D5CDBE;
+		font-size: 40px;
+		border: solid 5px #CBC1AF;
+		border-radius: 15px;
+		-webkit-transition: background .3s;
+        transition: background .3s;
+	}
+		.project-button:hover {
+			background: #111;
+		}
+		.project-button span {
+			padding: 0 25px 0 40px;
+		}
+	#projects h3 {
+		padding-top: 100px;
+	}
+	.popular-project{
+		width: 370px;
+		float: left;
+		margin-right: 14px;
+		padding: 0 0 20px 14px;
+		background: #dfd9ce;
+		-webkit-transition: background .3s;
+		transition: background .3s;		
+	}
+		.popular-project:hover {
+			background: #CBC1AF;
+		}
+		.popular-project h4 {
+			text-align: center;
+		}				
+		.popular-project img, .popular-project p {
+			float: left;
+		}
+		.popular-project p {
+			width: 110px;
+			padding: 10px 20px 0;
+		}
+		.popular-project a {
+			color: #222;
+			font-weight: bold;
+		}
 
+/********************************
+           CONTACT
+**********************************/
+#contact {
+	width: 800px;
+	text-align: center;
+	margin-bottom: 280px;
+}
+	#contact h3 {
+		font-size: 60px;
+		font-family: Arial, Helvetica, sans-serif;
+		color: #333;		
+	}
+	#contact a {
+		font-size: 50px;
+		color: #660022;
+	}
+	#contact p {
+		font-size: 40px;
+		color: #333;
 	}
 
 
 /*******************
- Media queries
+ 	MEDIA QUERIES
  *********************/
-@media (max-width: 1240px) { 
+@media (max-width: 1220px) {
+	#intro .logo {
+			width: 270px;
+			height: 270px;
+		}
+	#intro .type-logo {
+			font-size: 70px;
+		}
+}
+
+@media (max-width: 1000px) { 
 	#resources {
-		width: 700px;
+		width: 620px;
 	}
 }
 
-@media (max-width: 740px) { 
-	#resources {
-		width: 530px;
+@media (max-width: 975px) { 
+	#skills {
+		width: 480px;
 	}
-	.resources-box {
-		width: 100%;
+		#skills h2 {
+			padding-top: 120px;
+		}
+}
+
+@media (max-width: 900px) { 
+	#projects {
+		width: 400px;
+		}
+		.popular-project {
+			margin-bottom: 20px;
+		}
+	#contact {
+		width: 680px;
+	}	
+		#contact h3 {
+			font-size: 50px;		
+		}
+		#contact a {
+			font-size: 40px;
+		}
+		#contact p {
+			font-size: 30px;
+		}	
+}
+
+@media (max-width: 765px) { 
+	#intro .logo {
+		width: 240px;
+		height: 240px;
+		margin-top: 40px;
+		}
+	hr {
+		display: none;
+	}
+	#header p {
+		text-align: center;		
+	}
+	.social {
+		top: 75px;
+	}
+
+	#contact {
+		width: 550px;
+	}	
+		#contact h3 {
+			font-size: 40px;		
+		}
+		#contact a {
+			font-size: 30px;
+		}
+		#contact p {
+			font-size: 20px;
+		}	
+}
+
+@media (max-width: 635px) { 
+	#cover-letter {
+		width: 400px;	
+	}
+	#resources {
+		width: 320px;
+	}
+	#contact {
+		width: 300px;
 	}
 }
 
-@media (max-height: 540px) { 
-	#intro {
-		margin-bottom: 20px;	
+@media (max-width: 635px) { 
+	#skills {
+		width: 240px;
 	}
+}
+
+@media (max-width: 635px) { 
+	#skills {
+		width: 240px;
+	}
+}
+
+@media (max-width: 475px) {
+	#projects {
+		width: 320px
+	}
+		.time-done {
+			font-size: 18px;
+			padding: 0 10px;
+		}
+		.project-button {
+			width: 300px;
+			margin: 10px;			
+			font-size: 30px;			
+		}		
+		#projects h3 {
+			padding-top: 20px;
+		}
+		#projects h4 {
+			text-align: left;
+		}
+		.popular-project{
+			width: 270px;			
+		}
+			.popular-project p {
+				width: 250px;
+				margin: 0;
+				padding: 10px 0 0;
+			}
+}
+
+@media (max-width: 360px) { 
+	#intro,
+	#cover-letter,
+	#skills,
+	#resources,
+	#contact,
+	#projects {
+		margin: 0 auto;		
+	}
+	h2 {
+		font-size: 40px;
+	}
+
+	#cover-letter {
+		width: 320px;
+	}		
+		#cover-letter h2 {
+			margin: 0;
+		}
+	#skills h2 {
+		padding: 0;
+		margin-bottom: 30px;
+	}	
 }

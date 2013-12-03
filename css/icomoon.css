@@ -47,3 +47,24 @@
 .icon-code:before {
 	content: "\e608";
 }
+.icon-progress-1:before {
+	content: "\e601";
+}
+.icon-progress-2:before {
+	content: "\e60a";
+}
+.icon-progress-3:before {
+	content: "\e60b";
+}
+.icon-mail:before {
+	content: "\e609";
+}
+.icon-facebook:before {
+	content: "\e60c";
+}
+.icon-twitter:before {
+	content: "\e60d";
+}
+.icon-linkedin:before {
+	content: "\e60e";
+}
